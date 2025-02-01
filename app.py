@@ -1,6 +1,5 @@
 import base64
 from flask import Flask
-
 import os
 from flask import request, jsonify
 import tensorflow as tf 
@@ -14,8 +13,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app) 
 
-
-multiple_people_detector = hub.load("https://tfhub.dev/tensorflow/ssd_mobilenet_v2/2")
+multiple_people_detector = hub.load("https://tfhub.dev/tensorflow/efficientdet/d0/1")
 
 COCO_LABELS = {
     1: "person",
